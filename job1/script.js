@@ -1,10 +1,9 @@
-// Ajout d'un gestionnaire d'événement sur le clic du bouton
-// Lorsque que je clique sur le bouton avec l'id "button", j'execute la fonction suivante
+// Lorsque je clique sur le bouton avec l'id "button", j'exécute la fonction suivante
 document.getElementById("button").onclick = () => {
-  // Utilisation de l'API Fetch pour récupérer le contenu du fichier "expression.txt"
+  // Je récupère le contenu du fichier "expression.txt" avec fetch
   fetch("expression.txt")
-    // conversion de la réponse HTTP en texte grâce à la méthode text()
+    // Je convertis la réponse en texte
     .then(response => response.text())
-    // ajout du texte récupéré dans le body de la page HTML grâce à la méthode innerHTML
+    // J'ajoute le texte dans un paragraphe <p> et je l'insert dans le corps de la page
     .then(text => document.body.innerHTML += `<p>${text}</p>`);
 };
